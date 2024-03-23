@@ -1,0 +1,29 @@
+<%- include('layout/headerlo') %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mx-auto mt-4">
+                        <div class="card shadow">
+                            <div class="card-header bg-primary">
+                                <h5 class="text-light">Add New User</h5>
+                            </div>
+                            <div class="card-body p-4">
+                                <form action="/api/auth/signup" method="POST" id="add-form"  >
+                                     
+                                    <div class="mb-3">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Enter Email" required/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password">Mots De Passe </label>
+                                        <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Enter password" required/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="submit" name="submit" value="Add User" class="btn btn-primary btn-lg" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+<%- include('layout/footerlo') %>

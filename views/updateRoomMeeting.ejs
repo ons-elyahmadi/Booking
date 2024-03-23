@@ -1,0 +1,45 @@
+<%- include('layout/header') %>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-success">
+                    <h5 class="text-light">Modifier salle de réunion</h5>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/api/roomMeeting/update/<%=meetingRoom._id %>" method="POST" id="add-form">
+                        <div class="mb-3">
+                            <label for="name">Nom de la salle</label>
+                            <input type="text" name="name" id="name" value="<%=meetingRoom.name %>" class="form-control form-control-lg" placeholder="Entrez le nom de la salle" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="capacity">Capacité</label>
+                            <input type="number" name="capacity" value="<%=meetingRoom.capacity %>"  id="capacity" class="form-control form-control-lg" placeholder="Entrez la capacité de la salle" min="1" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amenities">Équipements  </label>
+                            <input type="text" name="amenities" id="amenities" value="<%=meetingRoom.amenities %>"  class="form-control form-control-lg" placeholder="Entrez les équipements de la salle (séparés par des virgules)" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="location">Emplacement</label>
+                            <input type="text" name="location" id="location" value="<%=meetingRoom.location %>"  class="form-control form-control-lg" placeholder="Entrez l'emplacement de la salle" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="floor">Étage</label>
+                            <input type="number" name="floor" id="floor" value="<%=meetingRoom.floor %>"  class="form-control form-control-lg" placeholder="Entrez l'étage de la salle" min="1" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" value="<%=meetingRoom.description %>" class="form-control form-control-lg" placeholder="Entrez une description de la salle"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" name="submit" value="Modifier une salle de réunion" class="btn btn-success btn-lg" />
+                        </div>
+                         
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('layout/footer') %>
